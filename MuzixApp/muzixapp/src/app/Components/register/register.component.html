@@ -1,0 +1,35 @@
+  <div >
+        <h2>REGISTER FORM</h2><hr><br>
+        <h3>
+            <form [formGroup]="registration" action="">
+                <mat-form-field appearance="fill">
+                <mat-label>Email Id</mat-label>
+                <input matInput type="email" formControlName="email">
+                <mat-hint *ngIf="!email?.valid&& email?.dirty">Invalid Email</mat-hint>
+                </mat-form-field>&nbsp;
+                <mat-form-field appearance="fill">
+                    <mat-label>UserName</mat-label>
+                    <input matInput type="userName" formControlName="userName">
+                    <mat-hint *ngIf="!userName?.valid&& userName?.dirty">Invalid userName</mat-hint>
+                    </mat-form-field><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input  matInput type="password" formControlName="password">
+                    <mat-hint *ngIf="!password?.valid&& password?.dirty">Must Be 5-10 Letter</mat-hint>
+                    <br> <mat-hint *ngIf="!password?.valid&& password?.dirty">Invalid password</mat-hint>
+                    </mat-form-field>&nbsp;
+                <mat-form-field appearance="fill">
+                    <mat-label> Confirm Password</mat-label>
+                    <input  matInput type="password" formControlName="cpassword">
+                    <mat-hint *ngIf="!password?.valid&& password?.dirty">Invalid password</mat-hint>
+                    </mat-form-field><br>
+                <mat-form-field appearance="fill" style=" width: 415px; margin-left: 1px;">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNo">
+                    <mat-hint *ngIf="!phoneNo?.valid&& phoneNo?.dirty">Invalid phoneNumber</mat-hint>
+                    </mat-form-field><br><br>
+                <button  mat-raised-button style="margin-left: 80px;" type="submit" color="warn"value="REGISTER"  (click)="submit()" mat-dailog-close [disabled]="registration.invalid || !(registration.value.password==registration.value.cpassword)">REGISTER</button><br>
+                <span style="color:rgba(5, 177, 220, 0.918); margin-left: 87px; margin-top: 17px;" >I Already Have Account ? <a routerLink="signup">SignIn</a></span>
+            </form>
+                </h3>
+    </div>

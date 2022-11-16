@@ -1,0 +1,45 @@
+
+<app-header></app-header>
+ <div class="dash">
+  <div fxLayout="row wrap" fxLayout.xs="column"   style="margin-left: 7px; margin-top: 5px;">
+  <div class= "dashboard" *ngFor="let x of movie | paginate: { itemsPerPage: count, currentPage: p }" fxFlex="20%">
+  <mat-card class="example-card">
+  
+  <mat-card-content  style="margin-left:23px ;">
+    <img src="https://image.tmdb.org/t/p/w185/{{x.poster_path}}"><br>
+    <span style="color:white;">TITLE :{{x.original_title}}</span><br>
+    <span style="color:white; ">LANGUAGE :{{x.original_language}} </span>
+    <br>
+    
+      <button class="btn-secondary"  *ngIf="isLoggedIn" (click)="sound()" (click)="searchMovieBasedOnId(x.id)"><i class="fa fa-heart"></i> Favourite</button>
+
+  
+  </mat-card-content> 
+  </mat-card>
+  </div>
+      
+</div>
+<div class="gray-box">
+  <div id="mySidenav" class="sidenav">
+    <a id="fav" (click)="callFavComp()">FavMovies</a>
+    <a id="recm" (click)="recommendMovies()">Recommended Movies</a>
+    <a id="trd" (click)="navigateToTreandingMovies()" >Trending Movies</a>
+    <a id="top" (click)="navigateToTopRatedMovies()" >TopRated Movies</a>
+    <a id="popular" (click)="navigateToPopularMovies()">Popular Movies</a>
+  </div> 
+   </div>
+<footer>
+   <div style="color:white;background-color: rgb(77, 102, 127);margin-left: 640px;width:280px;">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+  <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>       
+          <li><a href="#">Contact Us</a></li>
+  </ul>
+  <img  class="popcorn" src="./assets/popcorn.png"  style="width: 3%; margin-left: 40px;height:50px; "> 
+      <br><div class="footer-copyright">
+          <p>Copyright @ 2022 All Rights Reserved.</p>
+      </div>
+</footer>
+</div>

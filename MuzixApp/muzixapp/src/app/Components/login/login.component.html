@@ -1,0 +1,31 @@
+
+
+<div class="login-box" style="height: 330px; " >
+    <h2>LOGIN FORM</h2><hr><br><h3>
+    <form [formGroup]="loginform" action="">
+            <mat-form-field appearance="fill">
+                <mat-label>userName</mat-label>
+                <input matInput type="Name" formControlName="userName">
+                <mat-hint *ngIf="!userName?.valid&& userName?.dirty">Invalid userName</mat-hint><br>
+                </mat-form-field><br>
+                <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input  matInput type="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint *ngIf="!password?.valid&& password?.dirty">Invalid password</mat-hint>
+                <mat-hint *ngIf="!password?.valid&& password?.dirty">Must Be 5-10 Letter</mat-hint>
+                </mat-form-field><br>
+               
+                  
+                <button  mat-raised-button  type="submit" value="LOGIN"  class="sub" (click)="login()" [disabled]="loginform.invalid" ><span class="signIn">SIGN IN</span></button><br>
+                <br><span style="color:rgba(5, 177, 220, 0.918); margin-left: 20px; ">Have You Registered?  <span routerLink="signup"  routerLinkActive="Active">SIGNUP</span> </span>
+              
+          </form>
+                  <!--<button mat-flat-button routerLink="registation"  routerLinkActive="Active" style="margin-left: 225px;">Registration</button> -->
+                </h3>
+                
+               
+</div>
+

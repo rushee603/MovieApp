@@ -1,0 +1,44 @@
+<div> 
+<mat-toolbar>
+  <img  class="popcorn" src="./assets/popcorn.png" alt="img"  routerLink=""  routerLinkActive="Active">  <br>
+  &nbsp;<span style="color: white;font-size: 20px;">MӨVIΣ ΛPP</span>
+
+  <input  type="text" 
+     placeholder=" What do you want to search ?" [(ngModel)]="movieName" (keyup)="searchMovie()"   matInput>
+    <button mat-icon-button>
+    <mat-icon>search</mat-icon>
+    </button>
+
+    <button mat-button *ngIf="!isLoggedIn" (click)="openDialog()" style="margin-left:600px;border: 3px solid #f80b43" >
+    <span class="font">SIGN UP</span>
+    </button>   
+    
+    <button mat-button *ngIf="!isLoggedIn" routerlink="openDialog1" routerActive="Active" (click)="openDialog1()" style="margin-left:70px;border: 3px solid #f80b43;">
+    <span class="font">SIGN IN</span>
+    </button> 
+    
+    <button mat-button [matMenuTriggerFor]="signOut1" *ngIf="isLoggedIn" style="margin-left:700px;font-size: large;font-weight: bolder;font-family: serif; "><mat-icon> person_pin</mat-icon> WELCOME {{name}}</button>
+    <mat-menu #signOut1="matMenu">
+    <button mat-menu-item (click)="signOut()">Log Out</button> 
+    <button mat-menu-item (click)="viewProfile()">View Profile</button> 
+    <button mat-menu-item (click)="editProfile()">Edit Profile</button>
+    </mat-menu>
+</mat-toolbar>
+</div>
+
+<div class="dash" fxLayout="row wrap" fxLayout.xs="column"   style="margin-left: 12px; margin-top: 5px;" >
+  <div class= "dashboard" *ngFor="let x of movies" fxFlex="20%">
+  <mat-card class="example-card" style="width: 250px;height: 360px;margin-top: 9px; background-color: rgba(0, 0, 0, 0.616);border-radius: 10px; " >
+    
+  <mat-card-content  style="margin-left:28px ;">
+    <img src="https://image.tmdb.org/t/p/w185/{{x.poster_path}}"><br>
+    <span style="color:white;">Orignal Language: {{x.original_language}} </span><br>
+    <span style="color:white;">Title :{{x.original_title}}</span><br>
+        <button class="btn-secondary"  *ngIf="isLoggedIn" (click)="searchMovieBasedOnId(x.id)"><i class="fa fa-heart"></i> Favourite</button>
+  </mat-card-content> 
+  </mat-card>
+  </div>
+</div>
+
+
+

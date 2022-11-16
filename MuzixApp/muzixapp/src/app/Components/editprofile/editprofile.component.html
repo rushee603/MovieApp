@@ -1,0 +1,25 @@
+<div >
+    <h2>Updation Form</h2><hr><br>
+    <h3>
+        <form [formGroup]="registration" action="">
+            <h2 >UserName : {{userName}}</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input  matInput type="password" formControlName="password">
+                <mat-hint *ngIf="!password?.valid&& password?.dirty">Must Be 5-10 Letter</mat-hint>
+                <br> <mat-hint *ngIf="!password?.valid&& password?.dirty">Invalid password</mat-hint>
+                </mat-form-field>&nbsp;
+            <mat-form-field appearance="fill">
+                <mat-label> Confirm Password</mat-label>
+                <input  matInput type="password" formControlName="cpassword">
+                <mat-hint *ngIf="!password?.valid&& password?.dirty">Invalid password</mat-hint>
+                </mat-form-field><br>
+            <mat-form-field appearance="fill" style=" width: 415px; margin-left: 1px;">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNo">
+                <mat-hint *ngIf="!phoneNo?.valid&& phoneNo?.dirty">Invalid phoneNumber</mat-hint>
+                </mat-form-field><br><br>
+            <button  mat-raised-button style="margin-left: 10px;" type="submit" color="warn"value="REGISTER"  (click)="update()" mat-dailog-close [disabled]="registration.invalid || !(registration.value.password==registration.value.cpassword)">UPDATE</button><br>
+        </form>
+    </h3>
+</div>

@@ -1,0 +1,118 @@
+.example-card{
+    width: 235px;
+    /* height: 350px; */
+    max-height: fit-content;
+    margin-top: 9px;
+   background-color: rgba(0, 0, 0, 0.616); 
+    
+    border-radius: 10px;
+    
+    transition: 1s;
+
+}
+.example-card:hover{
+  transform:scale(1.2);
+  z-index: 2;
+
+}
+
+footer{
+    background-color:rgba(19, 18, 18, 0.979);
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 10px;
+    margin-top: auto;
+}
+
+footer li{
+    list-style: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+
+
+.menu a{
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.menu a:hover{
+    color: #52527a;
+    transition: 0.5s;
+}
+
+.footer-copyright{
+    background-color:#52527a;
+    color: #ffffff;
+    padding: 15px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.footer-copyright p{
+    margin-bottom: 0px;
+}
+
+img:hover {
+    background: #f403a4;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #f403a4c5,
+                0 0 15px #f403a4,
+                0 0 50px #f403a486;
+  }
+
+  .btn-secondary {
+  
+    margin-top: 10px;
+    background: #ed255469;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-decoration: none;
+    
+  }
+  .btn-secondary:hover {
+    transform: translateY(5px);
+  }
+
+  #mySidenav a {
+    position: absolute;
+    margin-top: 180px;
+    right: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 170px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  } 
+  
+  #mySidenav a:hover {
+   right: 0;
+  }
+  
+  #fav {
+    top: 20px;
+    background-color:#f44336 ;
+  }
+  
+  #trd {
+    top: 80px;
+    background-color: #2196F3;
+  }
+  
+  #top {
+    top: 140px;
+    background-color:#04AA6D ;
+  }
+  
+  #popular {
+    top: 200px;
+    background-color: #555
+  }
